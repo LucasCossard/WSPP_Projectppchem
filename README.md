@@ -1,13 +1,8 @@
 # Projetppchem
 
-## Project name: Laboratory assistant spreadsheet
+## Project name: Water Solubility Prediction App
 
 ### Objective:
 
-Create a spreadsheet to easily structure reaction. The user would only need to enter the name of the chemical compound and one of three pieces of information: concentration, mass/volume or equivalent. The remaining information will be calculated automatically.Other information (density, molar mass, etc.) are necessary to calculate other information.
+Create a web application to predict water solubility of chemicals. The objective is to find an ML model that can make good prediction and then create a web app with this model that take SMILES as input.
 
-### Coding:
-- Need a database of the x most widely used compounds in the world 
-- Need different functions to calculate different parameters
-- Make a nice graphical interface
--  Other
