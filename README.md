@@ -1,6 +1,6 @@
 # Projetppchem
 
-## Project name: Water Solubility Prediction App
+## Project name: Water Solubility Prediction Project
 
 ### Objective:
 
