@@ -1,8 +1,16 @@
-# Projetppchem
+#  Water Solubility Prediction Project
+## Overview
+This project aims to predict the water solubility of chemical compounds using machine learning techniques. The models developed here can be used to estimate the solubility of new compounds only using the SMILES code of the compounds, which can be valuable in various industries such as pharmaceuticals, agriculture, and environmental science.
 
-## Project name: Water Solubility Prediction Project
+## Project Structure
 
-### Objective:
+## Installation
+1. Clone this repository:
+2. Install the required Python packages:
 
-Create a web application to predict water solubility of chemicals. The objective is to find an ML model that can make good prediction and then create a web app with this model that take SMILES as input.
+# Usage
 
+# License
+This project is licensed under the MIT License.
+
+This project was carried out as part of EPFL's Practical programming in Chemistry course.
