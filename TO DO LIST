@@ -1,5 +1,11 @@
 To do list:
 
-- Mise au propre du Notebook avec texte
-- Rajouter l'enregistrement des fichiers `.pmd` des paramètes des models
-- 
+- Mise au propre du Notebook avec texte --> E et L
+- Enregistrement des fichiers `.pmd` des paramètes des models --> E et L 
+- Enregistrement des plots `.png`--> E et L
+- Model RF --> E
+- Model XGBRegressor --> E
+- Model overtrain LGBMRegressor --> L
+- Mise en page READ ME --> L
+- Faire un package pour lire un SMILES et un .csv--> E
+- Comparaison des plots/data --> E
