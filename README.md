@@ -6,6 +6,7 @@ In this repository, we are making available the data we used to train and test o
 
 ## Project Structure
 The project is structured as follows:
+**First, a Notebook containing :**
 - Import Relevant Modules and Libraries
 - Data Collection
 - Data Cleaning
@@ -21,6 +22,7 @@ git clone https://github.com/Nohalyan/Projetppchem
 2. Install the required Python packages:
 ```
 !pip install pathlib numpy pandas rdkit matplotlib scikit-learn lightgbm lazypredict tqdm
+#Remplacer par un package ?
 ```
 
 ## Usage
@@ -29,7 +31,9 @@ git clone https://github.com/Nohalyan/Projetppchem
 3. **Model Training:** Use the scripts in the Colab notebooks in the `notebooks/` directory to preprocess the data, train machine learning models, and save the trained models in the corresponding `models/` directory.
 4. **Model Evaluation:** Evaluate the model performance using the evaluation using the scripts in the Colab notebooks in the `notebooks/` directory.
 5. **Prediction:** Once trained, the models in the models/ directory can be used to predict the water solubility of new compounds by providing the required input features.
-
+```
+Changer ici par le code qui utilsie que un smile oui le csv
+```
 ## License
 This project is licensed under the MIT License.
 
