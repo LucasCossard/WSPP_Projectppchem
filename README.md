@@ -25,4 +25,7 @@ git clone https://github.com/Nohalyan/Projetppchem
 # License
 This project is licensed under the MIT License.
 
+#References
+This project is based on the code of this Github Jupyter notebook: https://github.com/gashawmg, as well as data from https://github.com/PatWalters. 
+
 This project was carried out as part of EPFL's Practical programming in Chemistry course.
