@@ -6,6 +6,7 @@ In this repository, we are making available the data we used to train and test o
 
 ## Project Structure
 The project is structured as follows:
+
 **First, a Notebook containing :**
 - Import Relevant Modules and Libraries
 - Data Collection
