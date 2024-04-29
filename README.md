@@ -31,4 +31,5 @@ This project is based on the code of this Github Jupyter notebook: https://githu
 ## Authors
 - Cossard Lucas: https://github.com/Nohalyan
 - Venancio Enzo: https://github.com/Enzo-vnc
+
 This project was carried out as part of EPFL's Practical programming in Chemistry course.
