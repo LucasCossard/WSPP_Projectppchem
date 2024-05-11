@@ -1,10 +1,18 @@
 # import the necessary libraries
+import numpy as np
 import pandas as pd
-from rdkit import Chem
-from rdkit.Chem import Descriptors, MoleculeDescriptors
-from tqdm import tqdm
-from lightgbm import LGBMRegressor
+from matplotlib import image, pyplot as plt
+import matplotlib.patches as mpatches
+import seaborn as sn
+
+from sklearn.metrics import r2_score, mean_squared_error
 import pickle
+
+from rdkit.Chem import AllChem
+from rdkit import Chem
+from rdkit.Chem import Descriptors
+from rdkit.Chem import rdMolDescriptors 
+from rdkit.ML.Descriptors import MoleculeDescriptors
 
 def process_csv(file_path):
     data = pd.read_csv(file_path)
