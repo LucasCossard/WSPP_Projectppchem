@@ -1,8 +1,10 @@
+# import the necessary libraries
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Descriptors, MoleculeDescriptors
 from tqdm import tqdm
 from lightgbm import LGBMRegressor
+import pickle
 
 def process_csv(file_path):
     data = pd.read_csv(file_path)
@@ -39,9 +41,14 @@ Takes a list of SMILES codes as input "smiles", converts each SMILES code into a
 Returns a tuple containing: list of descriptor values for each molecule "Mol_descriptors" and a list of descriptor names "desc_names".
 
 '''
+#Add the .pkl files paths
+def load_model_and_scalers(model_path='model_LGBM.pkl', scaler_path='model_scaler.pkl'):
+    with open(model_path, 'rb') as model_file:
+        model = pickle.load(model_file)
 
-def predict_LogS(X_train, y_train, X_valid):
-    model = LGBMRegressor(n_estimators=1151, max_depth=24, learning_rate=0.04, random_state=42)
-    model.fit(X_train, y_train)
-    y_preds = model.predict(X_valid)
-    return y_preds
+    with open(scaler_path, 'rb') as scaler_file:
+        scaler = pickle.load(scaler_file)
+
+    return model, scaler
+    
+#===================================================================================================================================================================================================
