@@ -44,32 +44,36 @@ def load_model_and_scalers(model_path=None, scaler_path=None):
     return model, scaler
 
 def predict_LogS(smiles):
-    canonical_smiles = canonical_SMILES([smiles])
-    descriptors, _ = RDkit_descriptors(canonical_smiles)
-
-    model, scaler = load_model_and_scalers()
-    scaled_descriptors = scaler.transform(descriptors)
-
-    logS_prediction = model.predict(scaled_descriptors)
-    return logS_prediction[0]
+    while True:
+        smiles_code = input("Enter a SMILES code: ")
+        if not Chem.MolFromSmiles(smiles_code):
+            print("Invalid SMILES code. Please enter a valid SMILES.")
+        else:
+            try:
+                float(smiles_code)  # Check if input is a float
+                print("Invalid input. Please enter a SMILES code, not a float value.")
+            except ValueError:
+                logS = predict_LogS(smiles_code)
+                print(f"Predicted LogS value for {smiles_code}: {logS}")
+                break  # Exit the loop if input is valid
 
 def get_logS_str():
     print(
         """\
-  ***********************************
-  *    _______          _______     *
-  *    / ____\ \        / /  __ \   *
-  *   | (___  \ \  /\  / /| |__) |  *
-  *    \___ \  \ \/  \/ / |  ___/   *
-  *    ____) |  \  /\  /  | |       *
-  *   |_____/    \/  \/   |_|       *
-  *                                 *
-  ***********************************"""
-   )
-     smiles_code = input("Please enter a SMILES code :")
+     ***********************************
+     *    _______          _______     *
+     *    / ____\ \        / /  __ \   *
+     *   | (___  \ \  /\  / /| |__) |  *
+     *    \___ \  \ \/  \/ / |  ___/   *
+     *    ____) |  \  /\  /  | |       *
+     *   |_____/    \/  \/   |_|       *
+     *                                 *
+     ***********************************"""
+         )
+    smiles_code = input("Please enter a SMILES code :")
                                 
-     logS = predict_LogS(smiles_code)
-     print(f"Predicted LogS value for {smiles_code}: {logS}")
+    logS = predict_LogS(smiles_code)
+    print(f"Predicted LogS value for {smiles_code}: {logS}")
 
 # Example usage:
 get_logS_str()
