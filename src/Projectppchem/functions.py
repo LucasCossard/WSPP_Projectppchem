@@ -12,7 +12,6 @@ import os
 def print_space():
     space =  """
 
-
     """
     print(space)
 
