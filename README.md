@@ -28,7 +28,7 @@ The project is structured as follows:
 ```
 git clone https://github.com/Nohalyan/Projetppchem
 ```
-3. Open your terminal or Anaconda Prompt and navigate to the directory containing the `ppchem_environment.yml` file and run the following command to create the Conda environment:
+3. Open your terminal or Anaconda Prompt and navigate to the directory `/src/Projectppchem` containing the `ppchem_environment.yml` file and run the following command to create the Conda environment:
 ```
 conda env create -f ppchem_environment.yml
 ```
