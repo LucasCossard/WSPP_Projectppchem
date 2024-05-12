@@ -52,11 +52,17 @@ def predict_LogS(smiles):
 
     logS_prediction = model.predict(scaled_descriptors)
     return logS_prediction[0]
-
+    
 def get_logS_str(smiles_code):
-    #smiles_code = input("Please enter a SMILES code :")
-    logS = predict_LogS(smiles_code)
-    print(f"Predicted LogS value for {smiles_code}: {logS}")
+    if not Chem.MolFromSmiles(smiles_code):
+        print("Invalid SMILES code. Please enter a valid SMILES.")
+    else:
+        try:
+            float(smiles_code)  # Check if input is a float
+            print("Invalid input. Please enter a SMILES code, not a float value.")
+        except ValueError:
+            logS = predict_LogS(smiles_code)
+            print(f"Predicted LogS value for {smiles_code}: {logS}")
 
 # Example usage:
-get_logS_str()
+get_logS_str("OCC1OC(O)C(C(C1O)O)O")
