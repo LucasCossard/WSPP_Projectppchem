@@ -96,7 +96,9 @@ def predict_LogS(smiles):
 
     logS_prediction = model.predict(scaled_descriptors)
     return logS_prediction[0]
-#=================================================================================================
+
+#==========================================================================================================================================
+
 # Prediction functions
 
 def predict_logS_smiles(*smiles_codes):
@@ -150,5 +152,4 @@ def predict_logS_csv(csv_file_path):
     df.to_csv(output_csv_file, index=False)
     print_space()
     print(f"Predicted LogS values saved to {output_csv_file}")
-    output_csv_file
     print_ascii_art()
