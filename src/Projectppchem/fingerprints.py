@@ -19,6 +19,7 @@ def print_ascii_art():
      \\______.'    \\/  \\/     |_____|    
                                        
     """
+    print(ascii_art)
 
 def process_csv(file_path):
     data = pd.read_csv(file_path)
@@ -83,7 +84,7 @@ def get_logS_str(*smiles_codes):
     print("\nLogS Values:")
     for smiles_code, logS in logS_values.items():
         print(f"The predicted logS value for {smiles_code} is: {logS}")
-    print(ascii_art)
+    print_ascii_art()
     print(f'Thank you for using, hope to see you soon!')
 
 
