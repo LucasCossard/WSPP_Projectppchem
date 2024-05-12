@@ -10,11 +10,11 @@ import pickle
 import os
 
 def print_space():
-space =  """
+    space =  """
 
 
     """
-print(space)
+    print(space)
 
 def print_ascii_art():
     ascii_art = """
