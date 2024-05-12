@@ -7,6 +7,7 @@ from rdkit.ML.Descriptors import MoleculeDescriptors
 from tqdm import tqdm
 from lightgbm import LGBMRegressor
 import pickle
+import os
 
 def process_csv(file_path):
     data = pd.read_csv(file_path)
