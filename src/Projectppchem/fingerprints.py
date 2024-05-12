@@ -31,13 +31,9 @@ def RDkit_descriptors(smiles):
     return Mol_descriptors, desc_names
 
 def load_model_and_scalers(model_path=None, scaler_path=None):
-    if model_path is None:
-        model_path = 'model_LGBM.pkl'  # Default path if not provided
-    if scaler_path is None:
-        scaler_path = 'model_scaler.pkl'  # Default path if not provided
 
-    model_full_path = os.path.abspath(model_path)
-    scaler_full_path = os.path.abspath(scaler_path)
+    model_full_path = "/content/Projectppchem/Data/LGBMRegressor/model_LGBM.pkl" #Provide here the path to the model_LGBM.pkl file
+    scaler_full_path = "/content/Projectppchem/Data/LGBMRegressor/scaler_LGBM.pkl" #Provide here the path to the scaler_LGBM.pkl file
 
     with open(model_full_path, 'rb') as model_file:
         model = pickle.load(model_file)
