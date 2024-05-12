@@ -71,7 +71,8 @@ def get_logS_str(*smiles_codes):
     # Print LogS values after processing all input SMILES codes
     print("\nLogS Values:")
     for smiles_code, logS in logS_values.items():
-        print(f"{smiles_code}: {logS}")
+        print(f"The predicted logS value for {smiles_code} is: {logS}")
+        print("Thank you for using our project, hope to see you soon!”)
 
 
 # Example usage:
