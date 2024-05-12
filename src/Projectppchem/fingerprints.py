@@ -72,7 +72,8 @@ def get_logS_str(*smiles_codes):
     print("\nLogS Values:")
     for smiles_code, logS in logS_values.items():
         print(f"The predicted logS value for {smiles_code} is: {logS}")
-        print(f'Thank you for using our project, hope to see you soon!')
+        
+    print(f'Thank you for using our project, hope to see you soon!')
 
 
 # Example usage:
