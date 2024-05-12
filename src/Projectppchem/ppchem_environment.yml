@@ -1,0 +1,10 @@
+name: ppchem_environment
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pandas
+  - numpy
+  - rdkit
+  - tqdm
+  - lightgbm
