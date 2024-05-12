@@ -4,7 +4,7 @@ Water Solubility Prediction Project
 
 ## Overview
 This project aims to predict the water solubility of chemical compounds using machine learning techniques. The project developed here can be used to estimate the solubility of new compounds only using the SMILES code of the compounds, which can be valuable in various industries such as pharmaceuticals, agriculture, and environmental science.
-In this repository, we are making available the data we used to train and test our models, `.pkl` files containing the optimized parameters of our models, a notebook tracing what we did from the beginning to the end of this project and a package that can predict the water solubility of several SMILEs and of a `.csv` file containing several SMILEs. 
+In this repository, we are making available the data we used to train and test our models and `.pkl` files containing the optimized parameters of our models. But more importantly a notebook tracing what we did from the beginning to the end of this project and a package that can predict the water solubility of several SMILEs and of a `.csv` file containing several SMILEs. 
 
 ## Project Structure
 The project is structured as follows:
