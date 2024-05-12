@@ -65,4 +65,5 @@ def get_logS_str(smiles_code):
             print(f"Predicted LogS value for {smiles_code}: {logS}")
 
 # Example usage:
-get_logS_str("OCC1OC(O)C(C(C1O)O)O")
+# get_logS_str("SMILE")
+# get_logS_str("OCC1OC(O)C(C(C1O)O)O") this will give you a prediction of the logS value of D-glucose in the case of this example
