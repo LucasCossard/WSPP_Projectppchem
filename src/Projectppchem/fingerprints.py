@@ -66,10 +66,10 @@ def get_logS_str():
   *                                 *
   ***********************************"""
    )
-    smiles_code = input("Please enter a SMILES code :")
+     smiles_code = input("Please enter a SMILES code :")
                                 
-    logS = predict_LogS(smiles_code)
-    print(f"Predicted LogS value for {smiles_code}: {logS}")
+     logS = predict_LogS(smiles_code)
+     print(f"Predicted LogS value for {smiles_code}: {logS}")
 
 # Example usage:
 get_logS_str()
