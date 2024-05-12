@@ -116,7 +116,7 @@ def predict_logS_csv(csv_file_path):
         return
 
     # Check if the required columns are present
-    if SMILE not in df.columns or LogS (mol/L) not in df.columns:
+    if "SMILE" not in df.columns or "LogS (mol/L)" not in df.columns:
         print("CSV file must have 'SMILE' in the first column and 'LogS (mol/L)' in the second column.")
         return
 
