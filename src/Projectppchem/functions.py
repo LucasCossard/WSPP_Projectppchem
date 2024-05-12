@@ -9,6 +9,13 @@ from lightgbm import LGBMRegressor
 import pickle
 import os
 
+def print_space()
+space =  """
+
+
+    """
+print(space)
+
 def print_ascii_art():
     ascii_art = """
 ===========================================================
@@ -21,6 +28,9 @@ def print_ascii_art():
 =                                   __/ |                 =  
 =                                  |___/                  =        
 ===========================================================                                     
+    """
+    space =  """
+
     """
     print(ascii_art)
 
@@ -84,6 +94,7 @@ def get_logS_str(*smiles_codes):
                 print(f"Predicted LogS value for {smiles_code}: {logS}")
 
     # Print LogS values after processing all input SMILES codes
+    print_space()
     print("\nLogS Values:")
     for smiles_code, logS in logS_values.items():
         print(f"The predicted logS value for {smiles_code} is: {logS}")
