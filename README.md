@@ -9,7 +9,7 @@ In this repository, we are making available the data we used to train and test o
 ## Project Structure
 The project is structured as follows:
 
-**First, a Notebook containing :**
+**First, a Notebook containing:**
 - Import Relevant Modules and Libraries
 - Data Collection
 - Data Cleaning
@@ -18,7 +18,11 @@ The project is structured as follows:
 - Fine-tuning
 - Analysis of different models
 - Saving of the best trained model and standard scaler
-
+- 
+**Second, a Package of two main functions containing:**
+-  A function tp predict the LogS value for one or more  SMILES
+-  A function to predicts LogS values for SMILES codes stored in a CSV file
+ 
 ## Installation
 1. Clone this repository:
 ```
