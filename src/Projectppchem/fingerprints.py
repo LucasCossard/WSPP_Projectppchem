@@ -30,11 +30,19 @@ def RDkit_descriptors(smiles):
         Mol_descriptors.append(descriptors)
     return Mol_descriptors, desc_names
 
-def load_model_and_scalers(model_path='model_LGBM.pkl', scaler_path='model_scaler.pkl'):
-    with open(model_path, 'rb') as model_file:
+def load_model_and_scalers(model_path=None, scaler_path=None):
+    if model_path is None:
+        model_path = 'model_LGBM.pkl'  # Default path if not provided
+    if scaler_path is None:
+        scaler_path = 'model_scaler.pkl'  # Default path if not provided
+
+    model_full_path = os.path.abspath(model_path)
+    scaler_full_path = os.path.abspath(scaler_path)
+
+    with open(model_full_path, 'rb') as model_file:
         model = pickle.load(model_file)
 
-    with open(scaler_path, 'rb') as scaler_file:
+    with open(scaler_full_path, 'rb') as scaler_file:
         scaler = pickle.load(scaler_file)
 
     return model, scaler
