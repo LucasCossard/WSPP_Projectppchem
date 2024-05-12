@@ -100,7 +100,6 @@ def predict_logS_str(*smiles_codes):
     for smiles_code, logS in logS_values.items():
         print(f"The predicted logS value for {smiles_code} is: {logS}")
     print_ascii_art()
-    print(f'Hope to see you soon!')
 
 # Example usage:
 # get_logS_str("SMILE")
@@ -133,8 +132,10 @@ def predict_logS_csv(csv_file_path):
     # Save the DataFrame with predicted LogS values to a new CSV file
     output_csv_file = csv_file_path.replace('.csv', '_predicted.csv')
     df.to_csv(output_csv_file, index=False)
-
+    print_space()
     print(f"Predicted LogS values saved to {output_csv_file}")
+    output_csv_file
+    print_ascii_art()
 
 # Example usage:
 #csv_file_path = 'path_to_your_csv_file.csv'
