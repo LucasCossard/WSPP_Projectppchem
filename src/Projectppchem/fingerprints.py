@@ -53,7 +53,7 @@ def predict_LogS(smiles):
     logS_prediction = model.predict(scaled_descriptors)
     return logS_prediction[0]
 
-def get_logS_str():
+def get_logS_str(smiles_code):
     print(
          "\
      ***********************************
@@ -66,8 +66,7 @@ def get_logS_str():
      *                                 *
      ***********************************"
          )
-    smiles_code = input("Please enter a SMILES code :")
-                                
+    #smiles_code = input("Please enter a SMILES code :")
     logS = predict_LogS(smiles_code)
     print(f"Predicted LogS value for {smiles_code}: {logS}")
 
