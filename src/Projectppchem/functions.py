@@ -33,11 +33,15 @@ def help():
     '''
     print(print_help)
 
+
+
 def print_space():
     space =  """
 
     """
     print(space)
+
+
 
 def print_ascii_art():
     ascii_art = """
@@ -54,14 +58,20 @@ def print_ascii_art():
     """
     print(ascii_art)
 
+
+
 def process_csv(file_path):
     data = pd.read_csv(file_path)
     smiles = data.iloc[:, 0].tolist()  # Assuming SMILES in the first column
     return smiles
 
+
+
 def canonical_SMILES(smiles):
     canon_smls = [Chem.CanonSmiles(smls) for smls in smiles]
     return canon_smls
+
+
 
 def RDkit_descriptors(smiles):
     mols = [Chem.MolFromSmiles(i) for i in smiles]
@@ -75,6 +85,8 @@ def RDkit_descriptors(smiles):
         Mol_descriptors.append(descriptors)
     return Mol_descriptors, desc_names
 
+
+
 def load_model_and_scalers(model_path=None, scaler_path=None):
 
     model_full_path = "/content/Projectppchem/Data/LGBMRegressor/model_LGBM.pkl" #Provide here the path to the model_LGBM.pkl file
@@ -87,6 +99,8 @@ def load_model_and_scalers(model_path=None, scaler_path=None):
         scaler = pickle.load(scaler_file)
 
     return model, scaler
+
+
 
 def predict_LogS(smiles):
     canonical_smiles = canonical_SMILES([smiles])
@@ -123,6 +137,7 @@ def predict_logS_smiles(*smiles_codes):
     for smiles_code, logS in logS_values.items():
         print(f"The predicted logS value for {smiles_code} is: {logS} mol/L")
     print_ascii_art()
+
 
 
 def predict_logS_csv(csv_file_path):
