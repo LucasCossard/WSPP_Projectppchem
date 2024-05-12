@@ -9,6 +9,17 @@ from lightgbm import LGBMRegressor
 import pickle
 import os
 
+def print_ascii_art():
+    ascii_art = """
+     ______  ____      ____  _______   
+    .' ____ \|_  _|    |_  _||_   __ \\  
+    | (___ \\_| \\ \\  /\\  / /    | |__) | 
+     _.____`.   \\ \\/  \\/ /     |  ___/  
+    | \\____) |   \\  /\\  /     _| |_     
+     \\______.'    \\/  \\/     |_____|    
+                                       
+    """
+
 def process_csv(file_path):
     data = pd.read_csv(file_path)
     smiles = data.iloc[:, 0].tolist()  # Assuming SMILES in the first column
@@ -72,8 +83,8 @@ def get_logS_str(*smiles_codes):
     print("\nLogS Values:")
     for smiles_code, logS in logS_values.items():
         print(f"The predicted logS value for {smiles_code} is: {logS}")
-        
-    print(f'Thank you for using our project, hope to see you soon!')
+    print(ascii_art)
+    print(f'Thank you for using, hope to see you soon!')
 
 
 # Example usage:
