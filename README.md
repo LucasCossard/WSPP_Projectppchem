@@ -44,6 +44,11 @@ conda activate ppchem_environment
 4. **Model Evaluation:** Evaluate the model performance using the evaluation using the scripts in the Colab notebooks in the `notebooks/` directory.
 5. **Prediction:** Once trained, the models in the models/ directory can be used to predict the water solubility of new compounds by providing the required input features.
 ### For the Package:
+If you're using a notebook without the environment, you can download the necessary libraries:
+```
+!pip install pandas numpy rdkit tqdm lightgbm
+```
+
 Once the repository has been cloned, you can use the following function to import the functions of our pacakge:
 ```
 from Projectppchem.src.Projectppchem import functions as f
