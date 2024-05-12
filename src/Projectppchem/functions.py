@@ -9,6 +9,29 @@ from lightgbm import LGBMRegressor
 import pickle
 import os
 
+
+def help():
+    print_help= '''
+    This package contains 2 main functions:  predict_logS_smiles and predict_logS_csv
+    
+    ===================================================================================
+    
+    predict_logS_smiles(smiles_code)
+    
+    Description: Predicts the LogS value for one or more  SMILES.
+    Usage: Provide one or more valid SMILES codes in a string as input
+    Example: predict_logS_smiles("CC(=O)NC1=CC=C(C=C1)O","CN1C=NC2=C1C(=O)N(C(=O)N2C)C")
+    
+    ===================================================================================
+    
+    print("predict_logS_csv(csv_file_path):
+    
+    Description: Predicts LogS values for SMILES codes stored in a CSV file
+    Usage: Provide the path to a CSV file containing SMILES codes in the 'SMILE' column (see Template.csv for an example of a valid csv file)
+    Example: predict_logS_csv("/content/Projectppchem/src/Projectppchem/Template.csv")
+    '''
+    print(print_help)
+
 def print_space():
     space =  """
 
@@ -79,7 +102,7 @@ def predict_LogS(smiles):
 #=================================================================================================
 # Prediction functions
 
-def predict_logS_str(*smiles_codes):
+def predict_logS_smiles(*smiles_codes):
     logS_values = {}  # Dictionary to store LogS values for each SMILES code
 
     for smiles_code in smiles_codes:
@@ -100,10 +123,6 @@ def predict_logS_str(*smiles_codes):
     for smiles_code, logS in logS_values.items():
         print(f"The predicted logS value for {smiles_code} is: {logS}")
     print_ascii_art()
-
-# Example usage:
-# get_logS_str("SMILE")
-# get_logS_str("OCC1OC(O)C(C(C1O)O)O") this will give you a prediction of the logS value of D-glucose in the case of this example
 
 
 def predict_logS_csv(csv_file_path):
@@ -136,7 +155,3 @@ def predict_logS_csv(csv_file_path):
     print(f"Predicted LogS values saved to {output_csv_file}")
     output_csv_file
     print_ascii_art()
-
-# Example usage:
-#csv_file_path = 'path_to_your_csv_file.csv'
-#predict_LogS_from_csv(csv_file_path)
