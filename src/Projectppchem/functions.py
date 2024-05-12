@@ -107,7 +107,7 @@ def predict_logS_str(*smiles_codes):
 # get_logS_str("OCC1OC(O)C(C(C1O)O)O") this will give you a prediction of the logS value of D-glucose in the case of this example
 
 
-def predict_logsS_csv(csv_file_path):
+def predict_logS_csv(csv_file_path):
     # Read the CSV file into a DataFrame
     try:
         df = pd.read_csv(csv_file_path)
@@ -137,5 +137,5 @@ def predict_logsS_csv(csv_file_path):
     print(f"Predicted LogS values saved to {output_csv_file}")
 
 # Example usage:
-csv_file_path = 'path_to_your_csv_file.csv'
-predict_LogS_from_csv(csv_file_path)
+#csv_file_path = 'path_to_your_csv_file.csv'
+#predict_LogS_from_csv(csv_file_path)
