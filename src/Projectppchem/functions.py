@@ -115,13 +115,13 @@ def predict_logS_smiles(*smiles_codes):
             except ValueError:
                 logS = predict_LogS(smiles_code)
                 logS_values[smiles_code] = logS  # Store LogS value in dictionary
-                print(f"Predicted LogS value for {smiles_code}: {logS}")
+                print(f"Predicted LogS value for {smiles_code}: {logS} mol/L")
 
     # Print LogS values after processing all input SMILES codes
     print_space()
     print("\nLogS Values:")
     for smiles_code, logS in logS_values.items():
-        print(f"The predicted logS value for {smiles_code} is: {logS}")
+        print(f"The predicted logS value for {smiles_code} is: {logS} mol/L")
     print_ascii_art()
 
 
@@ -146,7 +146,7 @@ def predict_logS_csv(csv_file_path):
         logS_predictions.append(logS_prediction)
 
     # Add the predicted LogS values to the DataFrame
-    df['Predicted_LogS'] = logS_predictions
+    df['Predicted_LogS mol/L'] = logS_predictions
 
     # Save the DataFrame with predicted LogS values to a new CSV file
     output_csv_file = csv_file_path.replace('.csv', '_predicted.csv')
