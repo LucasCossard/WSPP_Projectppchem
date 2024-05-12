@@ -53,7 +53,7 @@ def predict_LogS(smiles):
     logS_prediction = model.predict(scaled_descriptors)
     return logS_prediction[0]
     
-def get_logS_str(*smiles_code):
+def get_logS_str(*smiles_codes):
     for smiles_code in smiles_codes:
         if not Chem.MolFromSmiles(smiles_code):
             print(f"Invalid SMILES code: {smiles_code}. Skipping.")
