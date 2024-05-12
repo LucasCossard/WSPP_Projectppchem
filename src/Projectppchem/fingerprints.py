@@ -1,6 +1,9 @@
 import pandas as pd
+from rdkit.Chem import AllChem
 from rdkit import Chem
-from rdkit.Chem import Descriptors, MoleculeDescriptors
+from rdkit.Chem import Descriptors
+from rdkit.Chem import rdMolDescriptors 
+from rdkit.ML.Descriptors import MoleculeDescriptors
 from tqdm import tqdm
 from lightgbm import LGBMRegressor
 import pickle
