@@ -40,14 +40,16 @@ Once the repository has been cloned, you can use the following function to impor
 ```
 from Projectppchem.src.Projectppchem import functions as f
 ```
-the two main functions are `predict_logS_smiles` and `predict_logS_csv` which can be used in the following way:
+
+The two main functions are `predict_logS_smiles` and `predict_logS_csv` which can be used in the following way:
 ```
 f.predict_logS_smiles(*smiles_codes)
 ```
-and
+And
 ```
 f.predict_logS_csv(csv_file_path)
 ```
+
 If you need help you can use the following function
 ```
 f.help()
