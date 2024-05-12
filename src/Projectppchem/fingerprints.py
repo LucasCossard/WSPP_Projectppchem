@@ -88,7 +88,7 @@ def get_logS_str(*smiles_codes):
     for smiles_code, logS in logS_values.items():
         print(f"The predicted logS value for {smiles_code} is: {logS}")
     print_ascii_art()
-    print(f'Thank you for using, hope to see you soon!')
+    print(f'Hope to see you soon!')
 
 
 # Example usage:
