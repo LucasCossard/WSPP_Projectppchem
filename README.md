@@ -20,21 +20,39 @@ The project is structured as follows:
 ```
 git clone https://github.com/Nohalyan/Projetppchem
 ```
-2. Install the required Python packages:
+3. Open your terminal or Anaconda Prompt and navigate to the directory containing the `ppchem_environment.yml` file and run the following command to create the Conda environment:
 ```
-!pip install pathlib numpy pandas rdkit matplotlib scikit-learn lightgbm lazypredict tqdm
-#Remplacer par un package ?
+conda env create -f ppchem_environment.yml
 ```
-
+4. Activate the newly created Conda environment:
+```
+conda activate ppchem_environment 
+```
 ## Usage
+### For the Notebook:
 1. **Data Preparation:** Place your dataset in the `data/` directory. Ensure the dataset is formatted correctly with features and labels.
 2. **Exploratory Data Analysis:** Explore the dataset using the Colab notebooks in the `notebooks/` directory to understand the data distribution and relationships.
 3. **Model Training:** Use the scripts in the Colab notebooks in the `notebooks/` directory to preprocess the data, train machine learning models, and save the trained models in the corresponding `models/` directory.
 4. **Model Evaluation:** Evaluate the model performance using the evaluation using the scripts in the Colab notebooks in the `notebooks/` directory.
 5. **Prediction:** Once trained, the models in the models/ directory can be used to predict the water solubility of new compounds by providing the required input features.
+### For the Package:
+Once the repository has been cloned, you can use the following function to import the functions of our pacakge:
 ```
-Changer ici par le code qui utilsie que un smile oui le csv
+from Projectppchem.src.Projectppchem import functions as f
 ```
+the two main functions are `predict_logS_smiles` and `predict_logS_csv` which can be used in the following way:
+```
+f.predict_logS_smiles(*smiles_codes)
+```
+and
+```
+f.predict_logS_csv(csv_file_path)
+```
+If you need help you can use the following function
+```
+f.help()
+```
+
 ## License
 This project is licensed under the MIT License.
 
