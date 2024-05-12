@@ -76,8 +76,10 @@ def predict_LogS(smiles):
 
     logS_prediction = model.predict(scaled_descriptors)
     return logS_prediction[0]
-    
-def get_logS_str(*smiles_codes):
+#=================================================================================================
+# Prediction functions
+
+def predict_logS_str(*smiles_codes):
     logS_values = {}  # Dictionary to store LogS values for each SMILES code
 
     for smiles_code in smiles_codes:
@@ -100,7 +102,40 @@ def get_logS_str(*smiles_codes):
     print_ascii_art()
     print(f'Hope to see you soon!')
 
-
 # Example usage:
 # get_logS_str("SMILE")
 # get_logS_str("OCC1OC(O)C(C(C1O)O)O") this will give you a prediction of the logS value of D-glucose in the case of this example
+
+
+def predict_logsS_csv(csv_file_path):
+    # Read the CSV file into a DataFrame
+    try:
+        df = pd.read_csv(csv_file_path)
+    except FileNotFoundError:
+        print(f"File {csv_file_path} not found.")
+        return
+
+    # Check if the required columns are present
+    if 'SMILE' not in df.columns or 'LogS' not in df.columns:
+        print("CSV file must have 'SMILE' in the first column and 'LogS' in the second column.")
+        return
+
+    # Iterate over each row and predict LogS value
+    logS_predictions = []
+    for index, row in df.iterrows():
+        smiles = row['SMILE']
+        logS_prediction = predict_LogS(smiles)
+        logS_predictions.append(logS_prediction)
+
+    # Add the predicted LogS values to the DataFrame
+    df['Predicted_LogS'] = logS_predictions
+
+    # Save the DataFrame with predicted LogS values to a new CSV file
+    output_csv_file = csv_file_path.replace('.csv', '_predicted.csv')
+    df.to_csv(output_csv_file, index=False)
+
+    print(f"Predicted LogS values saved to {output_csv_file}")
+
+# Example usage:
+csv_file_path = 'path_to_your_csv_file.csv'
+predict_LogS_from_csv(csv_file_path)
