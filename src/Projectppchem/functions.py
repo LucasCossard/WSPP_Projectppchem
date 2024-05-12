@@ -167,5 +167,5 @@ def predict_logS_csv(csv_file_path):
     output_csv_file = csv_file_path.replace('.csv', '_predicted.csv')
     df.to_csv(output_csv_file, index=False)
     print_space()
-    print(f"Predicted LogS values saved to {output_csv_file}")
+    print(f"Predicted LogS values saved to: {output_csv_file}")
     print_ascii_art()
