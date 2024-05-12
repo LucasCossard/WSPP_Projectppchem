@@ -54,6 +54,8 @@ def predict_LogS(smiles):
     return logS_prediction[0]
     
 def get_logS_str(*smiles_codes):
+    logS_values = {}  # Dictionary to store LogS values for each SMILES code
+
     for smiles_code in smiles_codes:
         if not Chem.MolFromSmiles(smiles_code):
             print(f"Invalid SMILES code: {smiles_code}. Skipping.")
@@ -63,7 +65,14 @@ def get_logS_str(*smiles_codes):
                 print(f"Invalid input: {smiles_code}. Skipping.")
             except ValueError:
                 logS = predict_LogS(smiles_code)
+                logS_values[smiles_code] = logS  # Store LogS value in dictionary
                 print(f"Predicted LogS value for {smiles_code}: {logS}")
+
+    # Print LogS values after processing all input SMILES codes
+    print("\nLogS Values:")
+    for smiles_code, logS in logS_values.items():
+        print(f"{smiles_code}: {logS}")
+
 
 # Example usage:
 # get_logS_str("SMILE")
