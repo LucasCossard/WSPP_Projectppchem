@@ -54,18 +54,6 @@ def predict_LogS(smiles):
     return logS_prediction[0]
 
 def get_logS_str(smiles_code):
-    print(
-         "\
-     ***********************************
-     *    _______          _______     *
-     *    / ____\ \        / /  __ \   *
-     *   | (___  \ \  /\  / /| |__) |  *
-     *    \___ \  \ \/  \/ / |  ___/   *
-     *    ____) |  \  /\  /  | |       *
-     *   |_____/    \/  \/   |_|       *
-     *                                 *
-     ***********************************"
-         )
     #smiles_code = input("Please enter a SMILES code :")
     logS = predict_LogS(smiles_code)
     print(f"Predicted LogS value for {smiles_code}: {logS}")
