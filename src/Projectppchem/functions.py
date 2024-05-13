@@ -143,7 +143,7 @@ def predict_logS_smiles(*smiles_codes):
 def predict_logS_csv(csv_file_path):
     # Read the CSV file into a DataFrame
     try:
-        df = pd.read_csv(csv_file_path, delimiter=';')
+        df = pd.read_csv(csv_file_path)
     except FileNotFoundError:
         print(f"File {csv_file_path} not found.")
         return
