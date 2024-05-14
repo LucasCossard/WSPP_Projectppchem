@@ -1,3 +1,5 @@
+![Project Logo](assets/WSPP.png)
+
 <h1 align="center">
 Water Solubility Prediction Project
 </h1>
