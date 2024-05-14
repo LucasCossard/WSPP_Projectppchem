@@ -1,3 +1,5 @@
+# Imports all the necessary libraries
+
 import pandas as pd
 from rdkit.Chem import AllChem
 from rdkit import Chem
