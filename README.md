@@ -6,7 +6,7 @@ Water Solubility Prediction Project
 
 ## Overview
 This project aims to predict the water solubility of chemical compounds using machine learning techniques. The project developed here can be used to estimate the solubility of new compounds only using the SMILES code of the compounds, which can be valuable in various industries such as pharmaceuticals, agriculture, and environmental science.
-In this repository, we are making available the data we used to train and test our models and `.pkl` files containing the optimized parameters of our models. But more importantly a notebook tracing what we did from the beginning to the end of this project and a package that can predict the water solubility of several SMILEs and of a `.csv` file containing several SMILEs. 
+In this repository, we are making available the data we used to train and test our models and `.pkl` files containing the optimized parameters of our best model. But more importantly a notebook tracing what we did from the beginning to the end of this project and a package that can predict the water solubility of several SMILEs and of a `.csv` file containing several SMILEs. 
 
 ## Project Structure
 The project is structured as follows:
@@ -20,7 +20,7 @@ The project is structured as follows:
 - Fine-tuning
 - Analysis of different models
 - Saving of the best trained model and standard scaler
-- 
+
 **Second, a Package of two main functions containing:**
 -  A function tp predict the LogS value for one or more  SMILES
 -  A function to predicts LogS values for SMILES codes stored in a CSV file
@@ -38,14 +38,19 @@ conda env create -f ppchem_environment.yml
 ```
 conda activate ppchem_environment 
 ```
+
 ## Usage
+
 ### For the Notebook:
+
 1. **Data Preparation:** Place your dataset in the `data/` directory. Ensure the dataset is formatted correctly with features and labels.
 2. **Exploratory Data Analysis:** Explore the dataset using the Colab notebooks in the `notebooks/` directory to understand the data distribution and relationships.
 3. **Model Training:** Use the scripts in the Colab notebooks in the `notebooks/` directory to preprocess the data, train machine learning models, and save the trained models in the corresponding `models/` directory.
 4. **Model Evaluation:** Evaluate the model performance using the evaluation using the scripts in the Colab notebooks in the `notebooks/` directory.
 5. **Prediction:** Once trained, the models in the models/ directory can be used to predict the water solubility of new compounds by providing the required input features.
+6. 
 ### For the Package:
+
 If you're using a notebook without the environment, you can download the necessary libraries:
 ```
 !pip install pandas numpy rdkit tqdm lightgbm
