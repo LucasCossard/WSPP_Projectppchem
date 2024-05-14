@@ -9,10 +9,10 @@ from lightgbm import LGBMRegressor
 import pickle
 import os
 
-#==========================================================================================================================================
+#============================================================================================================================================
 
 def help():
-    print_help= '''
+    print_help= """
     This package contains 2 main functions:  predict_logS_smiles and predict_logS_csv
     
     ==========================================================================================================================================
@@ -30,12 +30,17 @@ def help():
     Description: Predicts LogS values for SMILES codes stored in a CSV file
     Usage: Provide the path to a CSV file containing SMILES codes in the 'SMILE' column (see Template.csv for an example of a valid csv file)
     Example: predict_logS_csv("/content/Projectppchem/src/Projectppchem/Template.csv")
-    '''
+
+    ==========================================================================================================================================
+    """
     print(print_help)
 
 
 
 def print_space():
+    """
+    Description: Makes space for readability.
+    """
     space =  """
 
     """
@@ -44,6 +49,9 @@ def print_space():
 
 
 def print_ascii_art():
+    """
+    Description: print("Thank for using SWPP!) which stand for Solubility Water Prediction Project.
+    """
     ascii_art = """
 =======================================================================================================================================
 =    _____ _                 _                             __                        _                _____  _    _____________   _   =
@@ -60,20 +68,35 @@ def print_ascii_art():
 
 
 
-def process_csv(file_path):
-    data = pd.read_csv(file_path)
-    smiles = data.iloc[:, 0].tolist()  # Assuming SMILES in the first column
-    return smiles
-
-
-
 def canonical_SMILES(smiles):
-    canon_smls = [Chem.CanonSmiles(smls) for smls in smiles]
-    return canon_smls
+    """
+    Generates canonical SMILES representations for a list of SMILES codes.
+
+    Parameters:
+    smiles (list): A list of SMILES codes.
+
+    Returns:
+    A list of canonical SMILES representations corresponding to the input SMILES codes.
+    """
+    
+    canon_smiles = [Chem.CanonSmiles(smls) for smls in smiles]
+    return canon_simles
 
 
 
 def RDkit_descriptors(smiles):
+    """
+    Calculates RDKit descriptors for a list of SMILES codes.
+
+    Parameters:
+    smiles (list): A list of SMILES codes.
+
+    Returns:
+    A tuple containing two lists:
+        - Mol_descriptors: List of descriptor values for each molecule corresponding to the input SMILES codes.
+        - desc_names: List of descriptor names.
+    """
+    
     mols = [Chem.MolFromSmiles(i) for i in smiles]
     calc = MoleculeDescriptors.MolecularDescriptorCalculator([x[0] for x in Descriptors._descList])
     desc_names = calc.GetDescriptorNames()
@@ -88,9 +111,24 @@ def RDkit_descriptors(smiles):
 
 
 def load_model_and_scalers(model_path=None, scaler_path=None):
+    """
+    Loads a trained model and scalers from specified paths.
 
-    model_full_path = "/content/Projectppchem/Data/LGBMRegressor/model_LGBM.pkl" #Provide here the path to the model_LGBM.pkl file
-    scaler_full_path = "/content/Projectppchem/Data/LGBMRegressor/scaler_LGBM.pkl" #Provide here the path to the scaler_LGBM.pkl file
+    Parameters:
+    model_path (str, optional): Path to the trained model file (default is None).
+    scaler_path (str, optional): Path to the scaler file (default is None).
+
+    Returns:
+    A tuple containing the loaded model and scaler objects.
+    """
+    
+    model_full_path = "/content/Projectppchem/Data/LGBMRegressor/model_LGBM.pkl"  # Provide the path to the model file
+    scaler_full_path = "/content/Projectppchem/Data/LGBMRegressor/scaler_LGBM.pkl"  # Provide the path to the scaler file
+    
+    if model_path:
+        model_full_path = model_path
+    if scaler_path:
+        scaler_full_path = scaler_path
 
     with open(model_full_path, 'rb') as model_file:
         model = pickle.load(model_file)
@@ -103,6 +141,16 @@ def load_model_and_scalers(model_path=None, scaler_path=None):
 
 
 def predict_LogS(smiles):
+    """
+    Predicts LogS values for a given SMILES code using a trained model.
+
+    Parameters:
+    smiles (str): A valid SMILES code for a chemical compound.
+
+    Returns:
+    Predicted LogS value for the input SMILES code.
+    """
+    
     canonical_smiles = canonical_SMILES([smiles])
     descriptors, _ = RDkit_descriptors(canonical_smiles)
 
@@ -117,6 +165,16 @@ def predict_LogS(smiles):
 # Prediction functions
 
 def predict_logS_smiles(*smiles_codes):
+    """
+    Predicts LogS values for a list of SMILES codes using a trained model.
+
+    Parameters:
+    *smiles_codes (str): Variable-length argument list of SMILES codes.
+
+    Returns:
+    The predicted logS value for each valid SMILES code.
+    """
+    
     logS_values = {}  # Dictionary to store LogS values for each SMILES code
 
     for smiles_code in smiles_codes:
@@ -141,6 +199,16 @@ def predict_logS_smiles(*smiles_codes):
 
 
 def predict_logS_csv(csv_file_path):
+    """
+    Predicts LogS values for SMILES codes stored in a CSV file and saves the predictions to a new CSV file.
+
+    Parameters:
+    csv_file_path (str): Path to the CSV file containing SMILES codes in the 'SMILE' column.
+
+    Returns:
+    A new CSV file named with '_predicted.csv' at the end containing the SMILES code and thei predicted LogS values. 
+    """
+    
     # Read the CSV file into a DataFrame
     try:
         df = pd.read_csv(csv_file_path)
@@ -150,7 +218,7 @@ def predict_logS_csv(csv_file_path):
 
     # Check if the required columns are present
     if "SMILE" not in df.columns:
-        print("CSV file must have 'SMILE' in the first column")
+        print("CSV file must have 'SMILE' in the first column, check that your file matches the template")
         return
 
     # Iterate over each row and predict LogS value
