@@ -67,7 +67,7 @@ f.predict_logS_smiles(*smiles_codes) and f.predict_logS_csv(csv_file_path)
 ```
 The first function `f.predict_logS_smiles(*smiles_codes)` can be used to predict the LogS value for one or more SMILES at the same time.
 The second fucntion `f.predict_logS_csv(csv_file_path)` can be used to predicts LogS values for SMILES codes stored in a CSV file.
-And if you need any help, you can use the function `f.help` which will give you more precise information on the functions as well as an example of how to use them. 
+And if you need any help, you can use the function `f.help()` which will give you more precise information on the functions as well as an example of how to use them. 
 
 ## License
 This project is licensed under the MIT License.
