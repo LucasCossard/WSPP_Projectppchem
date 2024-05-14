@@ -51,7 +51,7 @@ conda activate ppchem_environment
 6. 
 ### For the Package:
 
-If you're using a notebook without the environment, you can download the necessary libraries:
+If you are using a notebook without the environment, you can download the necessary libraries:
 ```
 !pip install pandas numpy rdkit tqdm lightgbm
 ```
@@ -61,19 +61,13 @@ Once the repository has been cloned, you can use the following function to impor
 from Projectppchem.src.Projectppchem import functions as f
 ```
 
-The two main functions are `predict_logS_smiles` and `predict_logS_csv` which can be used in the following way:
+The two main functions of our package are `predict_logS_smiles` and `predict_logS_csv` which can be used in the following way:
 ```
-f.predict_logS_smiles(*smiles_codes)
+f.predict_logS_smiles(*smiles_codes) and f.predict_logS_csv(csv_file_path)
 ```
-And
-```
-f.predict_logS_csv(csv_file_path)
-```
-
-If you need help you can use the following function:
-```
-f.help()
-```
+The first function `f.predict_logS_smiles(*smiles_codes)` can be used to predict the LogS value for one or more SMILES at the same time.
+The second fucntion `f.predict_logS_csv(csv_file_path)` can be used to predicts LogS values for SMILES codes stored in a CSV file.
+And if you need any help, you can use the function `f.help` which will give you more precise information on the functions as well as an example of how to use them. 
 
 ## License
 This project is licensed under the MIT License.
