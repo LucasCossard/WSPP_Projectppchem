@@ -88,7 +88,7 @@ def canonical_SMILES(smiles):
     """
     
     canon_smiles = [Chem.CanonSmiles(smls) for smls in smiles]
-    return canon_simles
+    return canon_smiles
 
 
 
