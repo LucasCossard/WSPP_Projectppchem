@@ -1,4 +1,4 @@
-![Project Logo](assets/WSPP.png)
+![Project Logo](assets/WSPP_logo.png)
 
 <h1 align="center">
 Water Solubility Prediction Project
