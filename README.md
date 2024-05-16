@@ -58,16 +58,16 @@ If you are using a notebook without the environment, you can download the necess
 
 Once the repository has been cloned, you can use the following function to import the functions of our pacakge:
 ```
-from Projectppchem.src.Projectppchem import functions as f
+from Projectppchem.src.WSPP import wspp_functions as wspp
 ```
 
 The two main functions of our package are `predict_logS_smiles` and `predict_logS_csv` which can be used in the following way:
 ```
-f.predict_logS_smiles(*smiles_codes) and f.predict_logS_csv(csv_file_path)
+wspp.predict_logS_smiles(*smiles_codes) and wspp.predict_logS_csv(csv_file_path)
 ```
-The first function `f.predict_logS_smiles(*smiles_codes)` can be used to predict the LogS value for one or more SMILES at the same time.
-The second fucntion `f.predict_logS_csv(csv_file_path)` can be used to predicts LogS values for SMILES codes stored in a CSV file.
-And if you need any help, you can use the function `f.help()` which will give you more precise information on the functions as well as an example of how to use them. 
+The first function `wspp.predict_logS_smiles(*smiles_codes)` can be used to predict the LogS value for one or more SMILES at the same time.
+The second fucntion `wspp.predict_logS_csv(csv_file_path)` can be used to predicts LogS values for SMILES codes stored in a CSV file.
+And if you need any help, you can use the function `wspp.help()` which will give you more precise information on the functions as well as an example of how to use them. 
 
 ## License
 This project is licensed under the MIT License.
