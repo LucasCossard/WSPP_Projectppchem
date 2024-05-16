@@ -72,7 +72,7 @@ def print_ascii_art():
 =                                     __/ |                                                   __/ |                                             =          
 =                                    |___/                                                   |___/                                              =
 =================================================================================================================================================                  
-    ""
+    """
     print(ascii_art)
 
 
@@ -215,9 +215,9 @@ def predict_logS_csv(csv_file_path):
     csv_file_path (str): Path to the CSV file containing SMILES codes in the 'SMILE' column.
 
     Returns:
-    A new CSV file named with '_predicted.csv' at the end containing the SMILES code and thei predicted LogS values. 
+    A new CSV file named with '_predicted.csv' at the end containing the SMILES code and thei predicted LogS values.
     """
-    
+ 
     # Read the CSV file into a DataFrame
     try:
         df = pd.read_csv(csv_file_path)
