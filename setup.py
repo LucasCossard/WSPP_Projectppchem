@@ -6,7 +6,7 @@ setup(
     author="Cossard Lucas and Venancio Enzo",
     packages=find_packages(),
     description = "water solubility prediction project",
-    long_description = file: README.md,
+    long_description = open('README.md').read(),
     url="https://github.com/Nohalyan/WSPP_Projectppchem",
     python_requires='>=3.8', 
     install_requires=[
