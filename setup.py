@@ -4,7 +4,7 @@ setup(
     name="WSPProjectppchem",
     version="0.1",
     author="Cossard Lucas and Enzo Venancio",
-    author_email="lucas.cossard@epfl.ch and enzo.venancio@epfl.ch"
+    author_email="lucas.cossard@epfl.ch and enzo.venancio@epfl.ch",
     description="Water Solubility Prediction Project",
     long_description=open('README.md').read() if os.path.exists('README.md') else '',
     long_description_content_type="text/markdown",
