@@ -5,6 +5,8 @@ setup(
     version="0.1",
     author="Cossard Lucas and Venancio Enzo",
     packages=find_packages(),
+    description = active learning to accelerate virtual drug discovery,
+    long_description = file: README.md,
     python_requires='>=3.8', 
     install_requires=[
         "pandas",
