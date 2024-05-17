@@ -246,7 +246,16 @@ def predict_logS_csv(csv_file_path=None):
     df['Predicted_LogS mol/L'] = logS_predictions
 
     # Save the DataFrame with predicted LogS values to a new CSV file
-    output_csv_file = csv_file_path.replace('.csv', '_predicted.csv')
+    output_csv_file = str(Path(csv_file_path).with_name(Path(csv_file_path).stem + '_predicted.csv'))
+    df.to_csv(output_csv_file, index=False)
+    print_space()
+    print(f"Predicted LogS values saved to: {output_csv_file}")
+    print_ascii_art()
+    # Add the predicted LogS values to the DataFrame
+    df['Predicted_LogS mol/L'] = logS_predictions
+
+    # Save the DataFrame with predicted LogS values to a new CSV file
+    output_csv_file = csv_file_path.replace(".csv","_predicted.csv")
     df.to_csv(output_csv_file, index=False)
     print_space()
     print(f"Predicted LogS values saved to: {output_csv_file}")
