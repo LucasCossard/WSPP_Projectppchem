@@ -10,6 +10,7 @@ from rdkit.Chem import rdMolDescriptors
 from rdkit.ML.Descriptors import MoleculeDescriptors
 from tqdm import tqdm
 from lightgbm import LGBMRegressor
+import importlib.resources as pkg_resources
 import pickle
 
 
@@ -128,19 +129,19 @@ def load_model_and_scalers(model_path=None, scaler_path=None):
     Returns:
     A tuple containing the loaded model and scaler objects.
     """
-    
-    model_full_path = "/content/WSPP_Projectppchem/Data/LGBMRegressor/model_LGBM.pkl"  # Provide the path to the model file
-    scaler_full_path = "/content/WSPP_Projectppchem/Data/LGBMRegressor/scaler_LGBM.pkl"  # Provide the path to the scaler file
-    
-    if model_path:
-        model_full_path = model_path
-    if scaler_path:
-        scaler_full_path = scaler_path
 
-    with open(model_full_path, 'rb') as model_file:
+    if model_path is None:
+        with pkg_resources.path('wsppchem.model_and_scaler', 'LGBM_model.pkl') as model_full_path:
+            model_path = model_full_path
+    
+    if scaler_path is None:
+        with pkg_resources.path('wsppchem.model_and_scaler', 'LGBM_scaler.pkl') as scaler_full_path:
+            scaler_path = scaler_full_path
+
+    with open(model_path, 'rb') as model_file:
         model = pickle.load(model_file)
 
-    with open(scaler_full_path, 'rb') as scaler_file:
+    with open(scaler_path, 'rb') as scaler_file:
         scaler = pickle.load(scaler_file)
 
     return model, scaler
