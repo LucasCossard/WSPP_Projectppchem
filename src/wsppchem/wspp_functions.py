@@ -32,7 +32,7 @@ def wshelp():
     
     ==========================================================================================================================================
     
-    print("predict_logS_csv(csv_file_path):
+    predict_logS_csv(csv_file_path):
     
     Description: Predicts LogS values for SMILES codes stored in a CSV file
     Usage: Provide the path to a CSV file containing SMILES codes in the 'SMILE' column (see Template.csv for an example of a valid csv file)
