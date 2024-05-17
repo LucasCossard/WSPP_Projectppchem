@@ -12,6 +12,9 @@ setup(
     url="https://github.com/Nohalyan/WSPP_Projectppchem",
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
+    package_data={
+        'wsppchem': ['model_and_scaler/*.pkl'],
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
