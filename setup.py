@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="WSPProjectppchem",
+    name="wsppchem",
     version="0.1",
     author="Cossard Lucas and Enzo Venancio",
     author_email="lucas.cossard@epfl.ch and enzo.venancio@epfl.ch",
