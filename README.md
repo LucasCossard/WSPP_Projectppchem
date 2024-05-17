@@ -21,7 +21,7 @@ This project contains two main elements: a Notebook and a Package.
 - Analysis of different models
 - Saving of the best trained model and scaler
 
-**2️⃣ A Package of two main functions containing:**
+**2️⃣ A Package containing two main functions:**
 
 -  A function to predict the LogS value for one or more  SMILES
 -  A function to predicts LogS values for SMILES codes stored in a CSV file
