@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="WSPP_Projectppchem",
+    name="WSPProjectppchem",
     version="0.1",
     author="Cossard Lucas and Venancio Enzo",
     packages=find_packages(),
