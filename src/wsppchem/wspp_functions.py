@@ -17,7 +17,7 @@ import pickle
 
 
 
-def help():
+def wshelp():
     print_help= """
     This package contains 2 main functions:  predict_logS_smiles and predict_logS_csv
     
