@@ -11,7 +11,7 @@ In this repository, we are making available the data we used to train and test o
 ## 📝 Project Structure 📝
 This project contains two main elements: a Notebook and a Package.
 
-**Firstly, a Notebook containing:**
+**1️⃣ A Notebook containing:**
 - Import Relevant Modules and Libraries
 - Data Collection
 - Data Cleaning
@@ -21,7 +21,7 @@ This project contains two main elements: a Notebook and a Package.
 - Analysis of different models
 - Saving of the best trained model and scaler
 
-**Secondly, a Package of two main functions containing:**
+**2️⃣ A Package of two main functions containing:**
 
 -  A function to predict the LogS value for one or more  SMILES
 -  A function to predicts LogS values for SMILES codes stored in a CSV file
