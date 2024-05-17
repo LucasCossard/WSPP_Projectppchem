@@ -11,6 +11,7 @@ from rdkit.ML.Descriptors import MoleculeDescriptors
 from tqdm import tqdm
 from lightgbm import LGBMRegressor
 import importlib.resources as pkg_resources
+from pathlib import Path
 import pickle
 
 
