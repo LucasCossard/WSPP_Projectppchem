@@ -1,18 +1,4 @@
 # tests/test_wsppchem.py
-"""
-First test summary:
-===================================== short test summary info ======================================
-FAILED tests/test_wspp_functions.py::test_load_model_and_scalers - ModuleNotFoundError: No module named 'sklearn'
-FAILED tests/test_wspp_functions.py::test_predict_LogS - ModuleNotFoundError: No module named 'sklearn'
-FAILED tests/test_wspp_functions.py::test_predict_logS_smiles - ModuleNotFoundError: No module named 'sklearn'
-FAILED tests/test_wspp_functions.py::test_predict_logS_csv - ModuleNotFoundError: No module named 'sklearn'
-=================================== 4 failed, 2 passed in 0.83s ====================================
-py310: exit 1 (1.10 seconds) /content/WSPP_Projectppchem> pytest pid=1575
-  py38: SKIP (0.09 seconds)
-  py39: SKIP (0.01 seconds)
-  py310: FAIL code 1 (26.98=setup[25.88]+cmd[1.10] seconds)
-  evaluation failed :( (27.16 seconds)
-"""
 
 import pytest
 from wsppchem.wspp_functions import (
