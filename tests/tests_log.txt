@@ -14,7 +14,7 @@ py310: exit 1 (1.10 seconds) /content/WSPP_Projectppchem> pytest pid=1575
 
 
 
-Test 2:
+Test 2: addition of additions of more tests
 ---------- coverage: platform linux, python 3.10.12-final-0 ----------
 Name                                                                    Stmts   Miss  Cover   Missing
 -----------------------------------------------------------------------------------------------------
@@ -41,7 +41,7 @@ coverage: exit 1 (1.41 seconds) /content/WSPP_Projectppchem> pytest --cov=wsppch
   evaluation failed :( (98.99 seconds)
 
 
-Test 3 :
+Test 3 : additions of "scikit-learn" to deps in tox.ini
 ========================================= warnings summary =========================================
 tests/test_wspp_functions.py::test_load_model_and_scalers
 tests/test_wspp_functions.py::test_predict_LogS
@@ -84,3 +84,5 @@ coverage: exit 1 (2.10 seconds) /content/WSPP_Projectppchem> pytest --cov=wsppch
   py312: SKIP (0.01 seconds)
   coverage: FAIL code 1 (27.09=setup[24.99]+cmd[2.10] seconds)
   evaluation failed :( (105.89 seconds)
+
+Test 4 : additions of "pytest-cov " to deps in tox.ini
