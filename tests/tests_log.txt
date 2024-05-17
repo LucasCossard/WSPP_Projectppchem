@@ -1,6 +1,5 @@
 
 Test 1:
-
 ===================================== short test summary info ======================================
 FAILED tests/test_wspp_functions.py::test_load_model_and_scalers - ModuleNotFoundError: No module named 'sklearn'
 FAILED tests/test_wspp_functions.py::test_predict_LogS - ModuleNotFoundError: No module named 'sklearn'
@@ -16,7 +15,6 @@ py310: exit 1 (1.10 seconds) /content/WSPP_Projectppchem> pytest pid=1575
 
 
 Test 2:
-
 ---------- coverage: platform linux, python 3.10.12-final-0 ----------
 Name                                                                    Stmts   Miss  Cover   Missing
 -----------------------------------------------------------------------------------------------------
@@ -41,3 +39,48 @@ coverage: exit 1 (1.41 seconds) /content/WSPP_Projectppchem> pytest --cov=wsppch
   py312: SKIP (0.01 seconds)
   coverage: FAIL code 1 (23.67=setup[22.25]+cmd[1.41] seconds)
   evaluation failed :( (98.99 seconds)
+
+
+Test 3 :
+========================================= warnings summary =========================================
+tests/test_wspp_functions.py::test_load_model_and_scalers
+tests/test_wspp_functions.py::test_predict_LogS
+tests/test_wspp_functions.py::test_predict_logS_smiles
+tests/test_wspp_functions.py::test_predict_logS_smiles
+tests/test_wspp_functions.py::test_predict_logS_csv
+tests/test_wspp_functions.py::test_predict_logS_csv
+  /content/WSPP_Projectppchem/.tox/coverage/lib/python3.10/site-packages/sklearn/base.py:376: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.2.2 when using version 1.4.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+  https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+    warnings.warn(
+
+tests/test_wspp_functions.py::test_predict_LogS
+tests/test_wspp_functions.py::test_predict_logS_smiles
+tests/test_wspp_functions.py::test_predict_logS_smiles
+tests/test_wspp_functions.py::test_predict_logS_csv
+tests/test_wspp_functions.py::test_predict_logS_csv
+  /content/WSPP_Projectppchem/.tox/coverage/lib/python3.10/site-packages/sklearn/base.py:493: UserWarning: X does not have valid feature names, but StandardScaler was fitted with feature names
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Name                                                                    Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------------------
+.tox/coverage/lib/python3.10/site-packages/wsppchem/__init__.py             0      0   100%
+.tox/coverage/lib/python3.10/site-packages/wsppchem/wspp_functions.py      98     11    89%   24-45, 192, 196, 225-226, 231-233, 237-238
+-----------------------------------------------------------------------------------------------------
+TOTAL                                                                      98     11    89%
+
+===================================== short test summary info ======================================
+FAILED tests/test_wspp_functions.py::test_predict_logS_smiles - TypeError: object of type 'NoneType' has no len()
+============================= 1 failed, 5 passed, 11 warnings in 1.70s =============================
+coverage: exit 1 (2.10 seconds) /content/WSPP_Projectppchem> pytest --cov=wsppchem --cov-report=term-missing pid=1476
+  check: FAIL code 1 (27.62=setup[27.45]+cmd[0.17] seconds)
+  docs: FAIL code 2 (25.36=setup[25.09]+cmd[0.27] seconds)
+  py38: SKIP (0.07 seconds)
+  py39: SKIP (0.02 seconds)
+  py310: FAIL code 1 (25.63=setup[24.07]+cmd[1.56] seconds)
+  py311: SKIP (0.01 seconds)
+  py312: SKIP (0.01 seconds)
+  coverage: FAIL code 1 (27.09=setup[24.99]+cmd[2.10] seconds)
+  evaluation failed :( (105.89 seconds)
