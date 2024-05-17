@@ -50,7 +50,7 @@ conda activate ppchem_environment
 5. **Prediction:** Once trained, the models in the models/ directory can be used to predict the water solubility of new compounds by providing the required input features.
 6. 
 ### For the Package:
-
+First, clone our repos
 If you are using a notebook without the environment, you can download the necessary libraries:
 ```
 !pip install pandas numpy rdkit tqdm lightgbm
