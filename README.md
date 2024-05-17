@@ -60,6 +60,7 @@ pip install wsppchem
 from wsppchem.wspp_functions import *
 ```
 3. Enjoy! 😁
+
 The two main functions of our package are `predict_logS_smiles` and `predict_logS_csv` which can be used in the following way:
 ```
 predict_logS_smiles(*smiles_codes)
