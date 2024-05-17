@@ -6,6 +6,12 @@ setup(
     author="Cossard Lucas and Venancio Enzo"
     packages=find_packages(),
     install_requires=[
-        "requests",
-    ],
+        "python=3.8",
+        "pandas",
+        "numpy",
+        "rdkit",
+        "tqdm",
+        "lightgbm",
+        "requests"
+    ]
 )
