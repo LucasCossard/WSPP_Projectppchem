@@ -206,17 +206,23 @@ def predict_logS_smiles(*smiles_codes):
 
 
 
-def predict_logS_csv(csv_file_path):
+def predict_logS_csv(csv_file_path=None):
     """
     Predicts LogS values for SMILES codes stored in a CSV file and saves the predictions to a new CSV file.
 
     Parameters:
-    csv_file_path (str): Path to the CSV file containing SMILES codes in the 'SMILE' column.
+    csv_file_path (str, optional): Path to the CSV file containing SMILES codes in the 'SMILE' column. 
+                                   If not provided, uses the default 'Template.csv'.
 
     Returns:
-    A new CSV file named with '_predicted.csv' at the end containing the SMILES code and thei predicted LogS values.
+    A new CSV file named with '_predicted.csv' at the end containing the SMILES code and their predicted LogS values.
     """
- 
+
+    # Use the default template if no csv_file_path is provided
+    if csv_file_path is None:
+        with pkg_resources.path('wsppchem', 'Template.csv') as default_csv_path:
+            csv_file_path = default_csv_path
+
     # Read the CSV file into a DataFrame
     try:
         df = pd.read_csv(csv_file_path)
