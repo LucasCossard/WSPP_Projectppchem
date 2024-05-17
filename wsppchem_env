@@ -1,5 +1,6 @@
-name: ppchem_environment
+name: wsppchem_env
 channels:
+  - defaults
   - conda-forge
 dependencies:
   - python=3.8
@@ -8,3 +9,4 @@ dependencies:
   - rdkit
   - tqdm
   - lightgbm
+  - requests
