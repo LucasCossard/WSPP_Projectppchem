@@ -12,7 +12,7 @@ from wsppchem.wspp_functions import (
 
 def test_canonical_SMILES():
     smiles = ["CC(=O)NC1=CC=C(C=C1)O", "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"]
-    expected = ["CC(=O)NC1=CC=C(C=C1)O", "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"]
+    expected = ["CC(=O)Nc1ccc(O)cc1", "Cn1c(=O)c2c(ncn2C)n(C)c1=O"]
     assert canonical_SMILES(smiles) == expected
 
 def test_RDkit_descriptors():
