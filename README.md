@@ -26,7 +26,29 @@ This project contains two main elements: a Notebook and a Package.
 -  A function to predict the LogS value for one or more  SMILES
 -  A function to predicts LogS values for SMILES codes stored in a CSV file
  
-## Installation of the package
+## Installation
+### Environment
+1. clone our repository:
+```
+git clone https://github.com/Nohalyan/Projetppchem
+```
+
+2. Open your terminal or Anaconda Prompt and navigate to the directory /WSPP_Projectppchem containing the wsppchem_env_environment.yml file and run the following command to create the Conda environment:
+```
+conda env create -f environment.yml
+```
+
+3. Activate the environment: After creating the environment, activate it using:
+```
+conda activate wsppchem_env
+```
+
+4. Verify the environment: To check that all the dependencies are installed correctly, you can list the installed packages:
+```
+conda list
+```
+
+### Package
 
 First, install our package `wsppchem` with a simple pip install.
 ```
