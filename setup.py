@@ -7,6 +7,7 @@ setup(
     packages=find_packages(),
     description = active learning to accelerate virtual drug discovery,
     long_description = file: README.md,
+    url="https://github.com/Nohalyan/WSPP_Projectppchem",
     python_requires='>=3.8', 
     install_requires=[
         "pandas",
