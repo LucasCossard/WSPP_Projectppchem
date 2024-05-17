@@ -40,7 +40,10 @@ from wsppchem.wspp_functions import *
 
 The two main functions of our package are `predict_logS_smiles` and `predict_logS_csv` which can be used in the following way:
 ```
-predict_logS_smiles(*smiles_codes) and predict_logS_csv(csv_file_path)
+predict_logS_smiles(*smiles_codes)
+```
+```
+predict_logS_csv(csv_file_path)
 ```
 
 The first function `predict_logS_smiles(*smiles_codes)` can be used to predict the LogS value for one or more SMILES at the same time.
