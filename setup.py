@@ -9,8 +9,8 @@ setup(
     long_description=open('README.md').read() if os.path.exists('README.md') else '',
     long_description_content_type="text/markdown",
     url="https://github.com/Nohalyan/WSPP_Projectppchem",
-    packages=find_packages(where='WSPP'),
-    package_dir={'': 'WSPP'},
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
