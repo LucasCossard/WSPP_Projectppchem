@@ -42,6 +42,7 @@ The two main functions of our package are `predict_logS_smiles` and `predict_log
 ```
 predict_logS_smiles(*smiles_codes)
 ```
+
 ```
 predict_logS_csv(csv_file_path)
 ```
