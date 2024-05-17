@@ -9,7 +9,7 @@ This project aims to predict the water solubility of chemical compounds using ma
 In this repository, we are making available the data we used to train and test our models and `.pkl` files containing the optimized parameters of our best model. But more importantly a notebook tracing what we did from the beginning to the end of this project and a package that can predict the water solubility of several SMILEs and of a `.csv` file containing several SMILEs. 
 
 ## Project Structure
-The project is structured as follows:
+This project contains two main elements: a Notebook and a Package.
 
 **Firstly, a Notebook containing:**
 - Import Relevant Modules and Libraries
