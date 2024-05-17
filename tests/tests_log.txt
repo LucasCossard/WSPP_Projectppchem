@@ -1,1 +1,26 @@
 
+Test 2 
+---------- coverage: platform linux, python 3.10.12-final-0 ----------
+Name                                                                    Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------------------------------------------
+.tox/coverage/lib/python3.10/site-packages/wsppchem/__init__.py             0      0   100%
+.tox/coverage/lib/python3.10/site-packages/wsppchem/wspp_functions.py      98     39    60%   24-45, 53-56, 64-77, 149, 168-171, 192, 196, 199-207, 225-226, 231-233, 237-238, 245-264
+-----------------------------------------------------------------------------------------------------
+TOTAL                                                                      98     39    60%
+
+===================================== short test summary info ======================================
+FAILED tests/test_wspp_functions.py::test_load_model_and_scalers - ModuleNotFoundError: No module named 'sklearn'
+FAILED tests/test_wspp_functions.py::test_predict_LogS - ModuleNotFoundError: No module named 'sklearn'
+FAILED tests/test_wspp_functions.py::test_predict_logS_smiles - ModuleNotFoundError: No module named 'sklearn'
+FAILED tests/test_wspp_functions.py::test_predict_logS_csv - ModuleNotFoundError: No module named 'sklearn'
+=================================== 4 failed, 2 passed in 1.05s ====================================
+coverage: exit 1 (1.41 seconds) /content/WSPP_Projectppchem> pytest --cov=wsppchem --cov-report=term-missing pid=2754
+  check: FAIL code 1 (27.18=setup[27.01]+cmd[0.17] seconds)
+  docs: FAIL code 2 (25.07=setup[24.81]+cmd[0.26] seconds)
+  py38: SKIP (0.07 seconds)
+  py39: SKIP (0.01 seconds)
+  py310: FAIL code 1 (22.88=setup[21.77]+cmd[1.12] seconds)
+  py311: SKIP (0.01 seconds)
+  py312: SKIP (0.01 seconds)
+  coverage: FAIL code 1 (23.67=setup[22.25]+cmd[1.41] seconds)
+  evaluation failed :( (98.99 seconds)
