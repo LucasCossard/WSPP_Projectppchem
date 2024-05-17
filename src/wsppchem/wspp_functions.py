@@ -15,15 +15,16 @@ import pickle
 from pathlib import Path
 
 
-#============================================================================================================================================
+
+#================================================================================================================================================
 
 
 
-def wshelp():
+def wspphelp():
     print_help= """
     This package contains 2 main functions:  predict_logS_smiles and predict_logS_csv
     
-    ==========================================================================================================================================
+    ==============================================================================================================================================
     
     predict_logS_smiles(smiles_code)
     
@@ -31,15 +32,15 @@ def wshelp():
     Usage: Provide one or more valid SMILES codes in a string as input
     Example: predict_logS_smiles("CC(=O)NC1=CC=C(C=C1)O","CN1C=NC2=C1C(=O)N(C(=O)N2C)C")
     
-    ==========================================================================================================================================
+    ==============================================================================================================================================
     
     predict_logS_csv(csv_file_path):
     
     Description: Predicts LogS values for SMILES codes stored in a CSV file
     Usage: Provide the path to a CSV file containing SMILES codes in the 'SMILE' column (see Template.csv for an example of a valid csv file)
-    Example: predict_logS_csv("/content/WSPP_Projectppchem/src/WSPP/Template.csv")
+    Example: predict_logS_csv("your_csv_file_path") or predict_logS_csv() if you want to test the function with the "Templater.csv" file provided
 
-    ==========================================================================================================================================
+    ==============================================================================================================================================
     """
     print(print_help)
 
