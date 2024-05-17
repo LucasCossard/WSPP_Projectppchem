@@ -13,7 +13,7 @@ setup(
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
     package_data={
-        'wsppchem': ['model_and_scaler/*.pkl'],
+        'wsppchem': ['model_and_scaler/*.pkl', 'Template.csv'],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
