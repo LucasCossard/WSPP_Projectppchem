@@ -1,4 +1,18 @@
 # tests/test_wsppchem.py
+"""
+First test summary:
+===================================== short test summary info ======================================
+FAILED tests/test_wspp_functions.py::test_load_model_and_scalers - ModuleNotFoundError: No module named 'sklearn'
+FAILED tests/test_wspp_functions.py::test_predict_LogS - ModuleNotFoundError: No module named 'sklearn'
+FAILED tests/test_wspp_functions.py::test_predict_logS_smiles - ModuleNotFoundError: No module named 'sklearn'
+FAILED tests/test_wspp_functions.py::test_predict_logS_csv - ModuleNotFoundError: No module named 'sklearn'
+=================================== 4 failed, 2 passed in 0.83s ====================================
+py310: exit 1 (1.10 seconds) /content/WSPP_Projectppchem> pytest pid=1575
+  py38: SKIP (0.09 seconds)
+  py39: SKIP (0.01 seconds)
+  py310: FAIL code 1 (26.98=setup[25.88]+cmd[1.10] seconds)
+  evaluation failed :( (27.16 seconds)
+"""
 
 import pytest
 from wsppchem.wspp_functions import canonical_SMILES, RDkit_descriptors, load_model_and_scalers, predict_LogS, predict_logS_smiles, predict_logS_csv
@@ -6,13 +20,13 @@ import pandas as pd
 import os
 
 def test_canonical_SMILES():
-    smiles = ["CCO", "O=C=O"]
-    expected = ["CCO", "O=C=O"]
+    smiles = ["CN1C=NC2=C1C(=O)N(C(=O)N2C)C", "CC(=O)NC1=CC=C(C=C1)O"]
+    expected = ["CN1C=NC2=C1C(=O)N(C(=O)N2C)C", "CC(=O)NC1=CC=C(C=C1)O"]
     result = canonical_SMILES(smiles)
     assert result == expected, f"Expected {expected}, but got {result}"
 
 def test_RDkit_descriptors():
-    smiles = ["CCO", "O=C=O"]
+    smiles = ["CN1C=NC2=C1C(=O)N(C(=O)N2C)C", "CC(=O)NC1=CC=C(C=C1)O"]
     descriptors, desc_names = RDkit_descriptors(smiles)
     assert len(descriptors) == len(smiles), f"Expected {len(smiles)} descriptors, but got {len(descriptors)}"
     assert len(desc_names) > 0, "Descriptor names should not be empty"
@@ -23,18 +37,18 @@ def test_load_model_and_scalers():
     assert scaler is not None, "Scaler should not be None"
 
 def test_predict_LogS():
-    smiles = "CCO"
+    smiles = "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"
     logS = predict_LogS(smiles)
     assert isinstance(logS, float), "Predicted logS should be a float"
 
 def test_predict_logS_smiles():
-    smiles_codes = ["CCO", "O=C=O"]
+    smiles_codes = ["CN1C=NC2=C1C(=O)N(C(=O)N2C)C", "CC(=O)NC1=CC=C(C=C1)O"]
     logS_values = predict_logS_smiles(*smiles_codes)
     assert len(logS_values) == len(smiles_codes), f"Expected {len(smiles_codes)} logS values, but got {len(logS_values)}"
 
 def test_predict_logS_csv(tmp_path):
     # Create a temporary CSV file for testing
-    df = pd.DataFrame({'SMILE': ['CCO', 'O=C=O']})
+    df = pd.DataFrame({'SMILE': ['CN1C=NC2=C1C(=O)N(C(=O)N2C)C', 'CC(=O)NC1=CC=C(C=C1)O']})
     test_csv_file = tmp_path / "test_smiles.csv"
     df.to_csv(test_csv_file, index=False)
 
