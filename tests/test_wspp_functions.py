@@ -18,6 +18,7 @@ import pytest
 from wsppchem.wspp_functions import canonical_SMILES, RDkit_descriptors, load_model_and_scalers, predict_LogS, predict_logS_smiles, predict_logS_csv
 import pandas as pd
 import os
+import sklearn
 
 def test_canonical_SMILES():
     smiles = ["CN1C=NC2=C1C(=O)N(C(=O)N2C)C", "CC(=O)NC1=CC=C(C=C1)O"]
