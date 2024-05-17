@@ -35,7 +35,7 @@ def help():
     
     Description: Predicts LogS values for SMILES codes stored in a CSV file
     Usage: Provide the path to a CSV file containing SMILES codes in the 'SMILE' column (see Template.csv for an example of a valid csv file)
-    Example: predict_logS_csv("/content/Projectppchem/src/WSPP/Template.csv")
+    Example: predict_logS_csv("/content/WSPP_Projectppchem/src/WSPP/Template.csv")
 
     ==========================================================================================================================================
     """
@@ -129,8 +129,8 @@ def load_model_and_scalers(model_path=None, scaler_path=None):
     A tuple containing the loaded model and scaler objects.
     """
     
-    model_full_path = "/content/Projectppchem/Data/LGBMRegressor/model_LGBM.pkl"  # Provide the path to the model file
-    scaler_full_path = "/content/Projectppchem/Data/LGBMRegressor/scaler_LGBM.pkl"  # Provide the path to the scaler file
+    model_full_path = "/content/WSPP_Projectppchem/Data/LGBMRegressor/model_LGBM.pkl"  # Provide the path to the model file
+    scaler_full_path = "/content/WSPP_Projectppchem/Data/LGBMRegressor/scaler_LGBM.pkl"  # Provide the path to the scaler file
     
     if model_path:
         model_full_path = model_path
