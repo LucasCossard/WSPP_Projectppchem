@@ -38,7 +38,7 @@ def wspphelp():
     
     Description: Predicts LogS values for SMILES codes stored in a CSV file
     Usage: Provide the path to a CSV file containing SMILES codes in the 'SMILE' column (see Template.csv for an example of a valid csv file)
-    Example: predict_logS_csv("your_csv_file_path") or predict_logS_csv() if you want to test the function with the "Templater.csv" file provided
+    Example: predict_logS_csv("your_csv_file_path") or predict_logS_csv() if you want to test the function with the "Template.csv" file provided
 
     ==============================================================================================================================================
     """
