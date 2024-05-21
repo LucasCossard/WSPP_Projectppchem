@@ -3,7 +3,7 @@ import os
 
 setup(
     name="wsppchem",
-    version="0.91",
+    version="0.92",
     author="Cossard Lucas and Enzo Venancio",
     author_email="lucas.cossard@epfl.ch and enzo.venancio@epfl.ch",
     description="Water Solubility Prediction Project",
