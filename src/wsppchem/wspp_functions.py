@@ -166,7 +166,8 @@ def predict_LogS(smiles):
 
     model, scaler = load_model_and_scalers()
     scaled_descriptors = scaler.transform(descriptors)
-
+    
+    logS_prediction = model.predict(scaled_descriptors)
     rounded_logS_prediction = round(logS_prediction[0], 2)
     return rounded_logS_prediction
 
