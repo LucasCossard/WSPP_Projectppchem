@@ -158,7 +158,7 @@ def predict_LogS(smiles):
     smiles (str): A valid SMILES code for a chemical compound.
 
     Returns:
-    Predicted LogS value for the input SMILES code.
+    Predicted LogS value for the input SMILES code, rounded to 0.01.
     """
     
     canonical_smiles = canonical_SMILES([smiles])
@@ -167,8 +167,8 @@ def predict_LogS(smiles):
     model, scaler = load_model_and_scalers()
     scaled_descriptors = scaler.transform(descriptors)
 
-    logS_prediction = model.predict(scaled_descriptors)
-    return logS_prediction[0]
+    rounded_logS_prediction = round(logS_prediction[0], 2)
+    return rounded_logS_prediction
 
 #==========================================================================================================================================
 
