@@ -81,7 +81,7 @@ This project is licensed under the MIT License.
 This project is based on the code of this Github Jupyter notebook: https://github.com/gashawmg, as well as data from https://github.com/PatWalters. 
 
 ## 📖 Authors 📖
-- Cossard Lucas: https://github.com/Nohalyan
+- Cossard Lucas: https://github.com/LucasCossard
 - Venancio Enzo: https://github.com/Enzo-vnc
 
 This project was carried out as part of EPFL's Practical programming in Chemistry course.
